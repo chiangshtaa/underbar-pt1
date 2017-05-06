@@ -31,4 +31,14 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns false if the target value is an array among the values of an object', () => {
+    const numbers = {
+      0: [1, 2, 3],
+      1: 1,
+      2: 2,
+      3: 3
+    };
+    expect(_.contains(numbers, [1, 2, 3])).toBe(false);
+  });
+
 });
