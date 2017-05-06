@@ -26,4 +26,9 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns -1 if starting index > array length -1', () => {
+    const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
+    expect(_.indexOf(arr, 'foo', 5)).toBe(-1);
+  });
+
 });
