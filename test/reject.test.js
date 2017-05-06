@@ -18,4 +18,18 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('rejects number values from an object', () => {
+    const obj = {
+      0: 1,
+      1: 'hello',
+      2: 'world',
+      3: 2,
+      4: -9
+    };
+
+    const nums = _.reject(obj, (value) => typeof(value) === 'number');
+    expect(nums).toEqual(['hello', 'world']);
+  });
+
 });
