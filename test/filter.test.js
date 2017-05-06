@@ -23,4 +23,10 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters an array to only numbers', () => {
+    const arr = ['hello', 1, 2, 5, 'world', 9, 30, -2];
+    expect(_.filter(arr, element => typeof(element) === 'number')).toEqual([1, 2, 5, 9, 30, -2]);
+  });
+  
 });
